@@ -11,27 +11,21 @@ function DeviceTrigger() {
  var DeviceWidth = window.innerWidth;
  document.body.classList.remove("xhd", "hd", "xl", "lg", "md", "sm", "xs", "big", "small")
  var device;
- if (DeviceWidth >= 1920) {
-  device = document.body.className += ' xhd' + ' big';
- }
- else if (DeviceWidth >= 1600) {
-  device = document.body.className += ' hd' + ' big';
- }
- else if (DeviceWidth >= 1366) {
-  device = document.body.className += ' xl' + ' big';
- }
- else if (DeviceWidth >= 1024) {
-  device = document.body.className += ' lg' + ' big';
- }
- else if (DeviceWidth >= 768) {
-  device = document.body.className += ' md' + ' small';
- }
- else if (DeviceWidth >= 460) {
-  device = document.body.className += ' sm' + ' small';
- }
- else {
-  device = document.body.className += ' xs' + ' small';
- }
+ if (DeviceWidth >= 1920) { device = document.body.className += ' xhd' + ' big'; }
+ else if (DeviceWidth >= 1600) { device = document.body.className += ' hd' + ' big'; }
+ else if (DeviceWidth >= 1366) { device = document.body.className += ' xl' + ' big'; }
+ else if (DeviceWidth >= 1024) { device = document.body.className += ' lg' + ' big'; }
+ else if (DeviceWidth >= 768) { device = document.body.className += ' md' + ' small'; }
+ else if (DeviceWidth >= 460) { device = document.body.className += ' sm' + ' small'; }
+ else { device = document.body.className += ' xs' + ' small'; }
 }
 window.addEventListener("resize", DeviceTrigger);
 window.addEventListener("load", DeviceTrigger);
+
+var body = document.body;
+var html = document.documentElement;
+document.getElementsByClassName('scrool-y')[0].addEventListener('mousewheel', function (e) {
+ body.scrollLeft -= (e.wheelDelta);
+ html.scrollLeft -= (e.wheelDelta);
+ e.preventDefault();
+}, false);
