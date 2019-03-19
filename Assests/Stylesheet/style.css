@@ -1,21 +1,37 @@
 /* Basic */
 @charset "utf-8"; /* Set Charset Encoding to UTF-8 */
 * { -webkit-overflow-scrolling:touch } 
+html { font-family: sans-serif; line-height: 1.15; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); } 
 html,body { width: 100%; height: 100%; overflow-x: hidden; } 
 body { line-height: 1; } 
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; } 
 /* Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } 
+abbr[title],abbr[data-original-title] { text-decoration: underline; -webkit-text-decoration: underline dotted; text-decoration: underline dotted; cursor: help; border-bottom: 0; -webkit-text-decoration-skip-ink: none; text-decoration-skip-ink: none; } 
+address { margin-bottom: 1rem; font-style: normal; line-height: inherit; } 
 form { margin:0 } 
 ol, ul { list-style: none; } 
 blockquote, q { quotes: none; } 
 blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } 
 table { border-collapse: collapse; border-spacing: 0; } 
 body { -webkit-text-size-adjust: none; } 
-body.scrool-y { overflow-y: hidden; overflow-x: scroll } 
-
+hr { box-sizing: content-box; height: 0; overflow: visible; } 
+h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 0.5rem; } 
+p { margin-top: 0; margin-bottom: 1rem; } 
+img { vertical-align: middle; border-style: none; } 
+svg { overflow: hidden; vertical-align: middle; } 
+button,[type="button"],[type="reset"],[type="submit"] { -webkit-appearance: button; } 
+button:not(:disabled),[type="button"]:not(:disabled),[type="reset"]:not(:disabled),[type="submit"]:not(:disabled) { cursor: pointer; } 
+button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner { padding: 0; border-style: none; } 
+input[type="radio"],input[type="checkbox"] { box-sizing: border-box; padding: 0; } 
+input[type="date"],input[type="time"],input[type="datetime-local"],
+input[type="month"] { -webkit-appearance: listbox; } 
+textarea { overflow: auto; resize: vertical; } 
+[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button { height: auto; } 
+::-webkit-file-upload-button { font: inherit; -webkit-appearance: button; } 
 /* Rush Most Used Classes */
+small,.small { font-size: 80%; font-weight: 400; } 
 .clear { clear:both } 
 .clearfix { *zoom:1 } 
 .clearfix:before,.clearfix:after { display:table; content:""; line-height:0 } 
@@ -30,8 +46,7 @@ body.scrool-y { overflow-y: hidden; overflow-x: scroll }
 .absolute { position: absolute } 
 .sticky { position: -webkit-sticky; position: sticky } 
 .fixed { position: fixed; } 
-.box { margin-left: auto; margin-right: auto; } 
-.d-none,.hide { display: none !important } 
+.d-none,.hide,[hidden] { display: none !important } 
 .d-block { display: block } 
 .d-flex { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; } 
 .d-grid { display: -ms-grid; display: grid } 
@@ -41,14 +56,32 @@ body.scrool-y { overflow-y: hidden; overflow-x: scroll }
 .f-light { font-weight: 300; font-weight: lighter } 
 .f-reg { font-weight: normal; font-weight: 400 } 
 .f-semibold { font-weight: 500 } 
-.f-bold { font-weight: bold; font-weight: 700 } 
+b,strong ,.f-bold { font-weight: bold; font-weight: 700 } 
 .f-bolder { font-weight: bolder; font-weight: 900 } 
 .fxs { font-size: .95rem } 
 .fs { font-size: 1rem } 
 .fm { font-size: 1.2rem } 
 .fl { font-size: 1.5rem } 
 .fxl { font-size: 2rem } 
+.img-maxbox { max-width: 100%; height:auto } 
+.img-box { width: 100%; height: auto; } 
+.ml-auto,.obj-center,.mx-auto { margin-left:auto } 
+.mr-auto,.obj-center,.mx-auto { margin-right:auto } 
 
-/* Containers */
+/* Main Box Wrapper */
+.box,.box-max { width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; } 
+
+
+
+/* Grid Row */
+.row { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; } 
+.no-gutters { margin-right: 0; margin-left: 0; } 
+.no-gutters > .col,.no-gutters > [class*="col-"] { padding-right: 0; padding-left: 0; } 
+
+.col,[class*="col-"] { position: relative; width: 100%; padding-right: 15px; padding-left: 15px; } 
+.col { -ms-flex-preferred-size: 0; flex-basis: 0; -ms-flex-positive: 1; flex-grow: 1; max-width: 100%; } 
+.col-auto { -ms-flex: 0 0 auto; flex: 0 0 auto; width: auto; max-width: 100%; } 
+/* HorizontalScroll CSS */
+body.scrool-y {  overflow-x: scroll } 
 .horizontalScroll { display: flex; flex-direction: row; flex-wrap: nowrap } 
 .horizontalScroll > div { flex: 0 0 auto; background: #eee; margin: 10px; } 
