@@ -1,19 +1,54 @@
 /* Basic */
-html,body { width: 100%; height: 100%; } 
+@charset "utf-8"; /* Set Charset Encoding to UTF-8 */
+* { -webkit-overflow-scrolling:touch } 
+html,body { width: 100%; height: 100%; overflow-x: hidden; } 
+body { line-height: 1; } 
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; } 
 /* Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } 
-body { line-height: 1; } 
+form { margin:0 } 
 ol, ul { list-style: none; } 
 blockquote, q { quotes: none; } 
 blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } 
 table { border-collapse: collapse; border-spacing: 0; } 
 body { -webkit-text-size-adjust: none; } 
-body,html { overflow-x: hidden; } 
 body.scrool-y { overflow-y: hidden; overflow-x: scroll } 
-/* Box Model */
-*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; } 
+
+/* Rush Most Used Classes */
+.clear { clear:both } 
+.clearfix { *zoom:1 } 
+.clearfix:before,.clearfix:after { display:table; content:""; line-height:0 } 
+.clearfix:after { clear:both } 
+.left { float:left } 
+.right { float:right } 
+.text-left { text-align:left } 
+.text-right { text-align:right } 
+.text-center { text-align:center } 
+.text-justify { text-align:justify } 
+.relative { position:relative } 
+.absolute { position: absolute } 
+.sticky { position: -webkit-sticky; position: sticky } 
+.fixed { position: fixed; } 
+.box { margin-left: auto; margin-right: auto; } 
+.d-none,.hide { display: none !important } 
+.d-block { display: block } 
+.d-flex { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; } 
+.d-grid { display: -ms-grid; display: grid } 
+.d-inline { display: inline; } 
+.no-link { text-decoration: none !important } 
+.no-feel { cursor: default } 
+.f-light { font-weight: 300; font-weight: lighter } 
+.f-reg { font-weight: normal; font-weight: 400 } 
+.f-semibold { font-weight: 500 } 
+.f-bold { font-weight: bold; font-weight: 700 } 
+.f-bolder { font-weight: bolder; font-weight: 900 } 
+.fxs { font-size: .95rem } 
+.fs { font-size: 1rem } 
+.fm { font-size: 1.2rem } 
+.fl { font-size: 1.5rem } 
+.fxl { font-size: 2rem } 
+
 /* Containers */
-.container { margin-left: auto; margin-right: auto; } 
 .horizontalScroll { display: flex; flex-direction: row; flex-wrap: nowrap } 
 .horizontalScroll > div { flex: 0 0 auto; background: #eee; margin: 10px; } 
